@@ -28,7 +28,7 @@ $.extend($.ui, { timepicker: { version: "0.9.5" } });
 
 function Timepicker() {
 	this.regional = []; // Available regional settings, indexed by language code
-	this.regional[''] = { // Default regional settings
+	/*this.regional[''] = { // Default regional settings
 		currentText: 'Now',
 		closeText: 'Done',
 		ampm: false,
@@ -39,6 +39,18 @@ function Timepicker() {
 		minuteText: 'Minute',
 		secondText: 'Second',
 		timezoneText: 'Time Zone'
+	};*/
+	this.regional['es'] = { // spanish regional settings
+		currentText: 'Fecha/hora actual',
+		closeText: 'Aceptar',
+		ampm: false,
+		timeFormat: 'hh:mm:ss',
+		timeOnlyTitle: 'Elegir hora',
+		timeText: 'Hora',
+		hourText: 'Hora',
+		minuteText: 'Minuto',
+		secondText: 'Segundo',
+		timezoneText: 'Zona horaria'
 	};
 	this._defaults = { // Global defaults for all the datetime picker instances
 		showButtonPanel: true,
@@ -75,7 +87,7 @@ function Timepicker() {
 			       "+0100", "+0200", "+0300", "+0400", "+0500", "+0600",
 			       "+0700", "+0800", "+0900", "+1000", "+1100", "+1200"]
 	};
-	$.extend(this._defaults, this.regional['']);
+	$.extend(this._defaults, this.regional['es']);
 }
 
 $.extend(Timepicker.prototype, {
